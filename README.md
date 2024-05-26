@@ -1,7 +1,9 @@
 # OSCP-Cheat-Sheet-2024
 
-![Image](https://github.com/n0xturne/OSCP-Cheat-Sheet-2024/blob/main/images/oscpBadge.png)
-___
+<p align="center">
+  <img src="http://some_place.com/image.png](https://github.com/n0xturne/OSCP-Cheat-Sheet-2024/blob/main/images/oscpBadge.png" />
+</p>
+
 ## Table of Contents
 
 - [Reconnaissance](#reconnaissance)

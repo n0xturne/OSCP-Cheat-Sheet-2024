@@ -1,7 +1,7 @@
 # OSCP-Cheat-Sheet-2024
 
 <p align="center">
-  <img src="http://some_place.com/image.png](https://github.com/n0xturne/OSCP-Cheat-Sheet-2024/blob/main/images/oscpBadge.png" />
+  <img src="https://github.com/n0xturne/OSCP-Cheat-Sheet-2024/blob/main/images/oscpBadge.png" />
 </p>
 
 ## Table of Contents

